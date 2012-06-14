@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>CSS3_six</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="/static/js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_six", allows you to change the colour of the text -->
+          <h1><a href="index.html">TheFight</a></h1>
+          <h2>The Fight of the Movies.</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="index.html">The Ring</a></li>
+            <li><a href="bestworst.html">The Top 50 Votes</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3>The Top 10</h3>
+          <h4>300</h4>
+          <h4>Sin City</h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+        </div>
+        <div class="sidebar">
+          <h3>The Bottom 5 </h3>
+          <h4>Movie 1</h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+          <h4>Movie </h4>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Welcome to the Ring</h1>
+        <h4>Which one do you prefer?</h4> 
+        <div class="movie1">
+          <img class="movie1" src="static/images/covers/shawshank_redemption.jpg" onclick="return clickmovie1()" alt="Movie 1" align="top"/>
+          <h4>yeah</h4>
+        </div>
+        <div class="movie2">
+          <img class="movie2" src="static/images/covers/shawshank_redemption.jpg" onclick="return clickmovie2()"alt="Movie 2" align="top"/>
+          <h4>oyeah</h4>
+        </div>
+      </div>
+    </div>
+    <footer>
+    Thanks to <a href="http://imdb.com">IMDB</a> for this awesome list !
+    </footer>
+  </div>
+  <p>&nbsp;</p>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="static/js/jquery.js"></script>
+  <script type="text/javascript" src="static/js/default.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".movie1").click(function(){
+      $(this).hide();
+    });
+    $(".movie2").click(function(){
+      $(this).hide();
+    });
+  });
+  </script>
+</body>
+</html>
