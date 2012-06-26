@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>CSS3_six</title>
+  <title>The Fight</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -16,7 +16,6 @@
     <header>
       <div id="logo">
         <div id="logo_text">
-          <!-- class="logo_six", allows you to change the colour of the text -->
           <h1><a href="index.html">TheFight</a></h1>
           <h2>The Fight of the Movies.</h2>
         </div>
@@ -33,18 +32,9 @@
     <div id="site_content">
       <div id="sidebar_container">
         <div class="sidebar">
-          <h3>The Top 10</h3>
-          <h4>300</h4>
-          <h4>Sin City</h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
-          <h4>Movie </h4>
+          {% for movie in ALL_MOVIES %}
+          <h4> {{ movie.name }} - {{ movie.score|floatformat:"0" }}</h4>
+          {% endfor %}
         </div>
         <div class="sidebar">
           <h3>The Bottom 5 </h3>
@@ -60,12 +50,12 @@
         <h1>Welcome to the Ring</h1>
         <h4>Which one do you prefer?</h4> 
         <div class="movie1">
-          <img class="movie1" src="static/images/covers/shawshank_redemption.jpg" onclick="return clickmovie1()" alt="Movie 1" align="top"/>
-          <h4>yeah</h4>
+          <img src="static/images/covers/{{FIRST_IMAGE}}" onclick="return clickmovie({{FIRST_MOVIE_ID}},{{SECOND_MOVIE_ID}},true)" alt="Movie 1" align="top"/>
+          <h4>{{FIRST_NAME}}</h4>
         </div>
         <div class="movie2">
-          <img class="movie2" src="static/images/covers/shawshank_redemption.jpg" onclick="return clickmovie2()"alt="Movie 2" align="top"/>
-          <h4>oyeah</h4>
+          <img src="static/images/covers/{{SECOND_IMAGE}}" onclick="return clickmovie({{FIRST_MOVIE_ID}},{{SECOND_MOVIE_ID}},false)"alt="Movie 2" align="top"/>
+          <h4>{{SECOND_NAME}}</h4>
         </div>
       </div>
     </div>
@@ -77,15 +67,5 @@
   <!-- javascript at the bottom for fast page loading -->
   <script type="text/javascript" src="static/js/jquery.js"></script>
   <script type="text/javascript" src="static/js/default.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $(".movie1").click(function(){
-      $(this).hide();
-    });
-    $(".movie2").click(function(){
-      $(this).hide();
-    });
-  });
-  </script>
 </body>
 </html>
