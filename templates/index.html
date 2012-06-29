@@ -50,11 +50,11 @@
         <h1>Welcome to the Ring</h1>
         <h4>Which one do you prefer?</h4> 
         <div class="movie1">
-          <img src="static/images/covers/{{FIRST_IMAGE}}" onclick="return clickmovie({{FIRST_MOVIE_ID}},{{SECOND_MOVIE_ID}},true)" alt="Movie 1" align="top"/>
+          <img src="static/images/covers/{{FIRST_IMAGE}}" id=movieimg1 onclick="return clickmovie({{FIRST_MOVIE_ID}},{{SECOND_MOVIE_ID}},true)" alt="Movie 1" align="top"/>
           <h4>{{FIRST_NAME}}</h4>
         </div>
         <div class="movie2">
-          <img src="static/images/covers/{{SECOND_IMAGE}}" onclick="return clickmovie({{FIRST_MOVIE_ID}},{{SECOND_MOVIE_ID}},false)"alt="Movie 2" align="top"/>
+          <img src="static/images/covers/{{SECOND_IMAGE}}" id=movieimg2 onclick="return clickmovie({{FIRST_MOVIE_ID}},{{SECOND_MOVIE_ID}},false)"alt="Movie 2" align="top"/>
           <h4>{{SECOND_NAME}}</h4>
         </div>
       </div>

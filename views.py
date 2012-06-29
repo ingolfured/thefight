@@ -27,7 +27,7 @@ def updateScore(request):
         loserID = request.POST["firstID"]
         winnerID = request.POST["secondID"]
 
-    allmovies = Movie.objects.all()
+    allmovies = Movie.objects.all().order_by('score').reverse()
     winner = allmovies.get(id=winnerID)
     loser =  allmovies.get(id=loserID)
 
@@ -45,9 +45,7 @@ def updateScore(request):
     dict['SECOND_NAME']=second_movie.name
     dict['FIRST_MOVIE_ID']=first_movie.id
     dict['SECOND_MOVIE_ID']=second_movie.id
-
-
-    return HttpResponse(simplejson.dumps(dict), mimetype='application/javascript')
+    return HttpResponse(simplejson.dumps(dict), mimetype="application/x-javascript")
 
 
 def match(winnerScore, loserScore):

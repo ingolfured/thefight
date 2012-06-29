@@ -39,13 +39,18 @@ function clickmovie (firstID, secondID, isFirstWinner) {
 $.ajax({
     type: 'POST',
     url: '/updatescore/',
+    dataType:'json',
     data: {
         'firstID': firstID,
         'secondID': secondID,
         'isFirstWinner': isFirstWinner,
     },
     success: function (dict) {
-        alert('gaman1');
-      },
+       $('#movieimg1').removeAttr("src").attr('src', "static/images/covers/"+dict.FIRST_IMAGE);
+       $('#movieimg2').removeAttr("src").attr('src', "static/images/covers/"+dict.SECOND_IMAGE);
+    },
+    error: function (){
+      alert("error"); 
+    },
   });
 }
